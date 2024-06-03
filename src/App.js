@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect} from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { onAuthStateChanged, signOut } from 'firebase/auth'
+import { auth } from './config/firebase'
 
-function App() {
+import Login from './pages/Login'
+import ChatLobby from './pages/ChatLobby'
+import ChatRoom from './pages/ChatRoom'
+import JoinA from './pages/JoinA'
+import JoinB from './pages/JoinB'
+ 
+const App = () => {
+  const [isLogged, setIsLogged] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<Login />} />
+        <Route path='joina' element={<JoinA />} />
+        <Route path='joinb' element={<JoinB />} />
+ /    </Routes>
+    </Router>
+  )
 }
 
-export default App;
+export default App
