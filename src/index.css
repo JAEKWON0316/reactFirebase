@@ -27,6 +27,11 @@ body {
   border-radius:50%;
   line-height: 80px;
 }
+.login-wrap span img{
+  width:80px;
+  height:80px;
+  object-fit: cover;
+}
 .login-form{
   padding-left:50px;
   padding-right:50px;
