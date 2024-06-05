@@ -41,9 +41,9 @@ const JoinA = () => {
       setError("비밀번호를 입력하세요.");
       setShow(true);
     }
-    else if(values.pass.length < 4){
+    else if(values.pass.length < 6){
       formError = false;
-      setError("비밀번호는 4자 이상이어야 합니다.");
+      setError("비밀번호는 6자 이상이어야 합니다.");
       setShow(true);
     }
     else if(values.pass !== values.repass){ //react 에서는 === !== 이런식으로 3개를 써줘야함.
